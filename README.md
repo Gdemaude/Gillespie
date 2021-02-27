@@ -8,7 +8,7 @@ Within gillespie.py, gillespie_direct() is the actual implementation of Gillespi
 
 To adapt this code to your situation, the following must be changed: data, stoichiometry and propensity()
 
-# Reference
+# References
 Exact stochastic simulation of coupled chemical reactions : https://pubs.acs.org/doi/abs/10.1021/j100540a008
 
 Modéliser la propagation d’une épidémie : http://www.math.ens.fr/enseignement/telecharger_fichier.php?fichier=1693
