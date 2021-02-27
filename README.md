@@ -4,7 +4,7 @@ Numba accelerated implementation of Gillespie's algorithm for simulating stochas
 This implementation is around 6 times faster but less user-friendly.
 
 # Usage
-Within gillespie.py, gillespie_direct() is the actual implementation of Gillespie's algorithm. The remaining of the code is an example of its usage on the SIR model as explained on this [wikipedia] (https://en.wikipedia.org/wiki/Gillespie_algorithm) page.
+Within gillespie.py, gillespie_direct() is the actual implementation of Gillespie's algorithm. The remaining of the code is an example of its usage on the SIR model as explained on this [wikipedia](https://en.wikipedia.org/wiki/Gillespie_algorithm) page.
 
 To adapt this code to your situation, the following must be changed: data, stoichiometry and propensity()
 
