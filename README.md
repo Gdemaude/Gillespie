@@ -1,7 +1,7 @@
 # Gillespie
-Numba accelerated implementation of Gillespie's algorithm for simulating stochastic processes. This implementation was inspired by the following [project](https://github.com/wefatherley/monte-carlo).
+Numba accelerated implementation of Gillespie's algorithm for simulating stochastic processes. This implementation is based on the following [project](https://github.com/wefatherley/monte-carlo).
 
-This implementation is around 6 times faster but less user-friendly.
+This implementation can be 6 to 10 times faster but it is less user-friendly.
 
 # Usage
 Within gillespie.py, gillespie_direct() is the actual implementation of Gillespie's algorithm. The remaining of the code is an example of its usage on the SIR model as explained on this [wikipedia](https://en.wikipedia.org/wiki/Gillespie_algorithm) page.
