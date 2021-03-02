@@ -79,7 +79,7 @@ def propensity(i, d):
     # parameters
     alpha = 2.0
     beta = 1.0
-    N = 5500
+    N = 5500 # do not forget to update this number if you change initial population in data
     return np.array([alpha * d[0][i] * d[1][i] / N, #S -> I at transition rate: alpha * S * I / N
                      beta * d[1][i]]) # I -> R at transition rate: beta * I
 
