@@ -8,6 +8,13 @@ Within gillespie.py, gillespie_direct() is the actual implementation of Gillespi
 
 To adapt this code to your situation, the following must be changed: data, stoichiometry and propensity()
 
+# Result
+<div align="center">
+    <img src=".github/SIR48020.png" width="300">
+</div>
+
+Here is the result of 100 simulations on a population of 480 susceptible people and 20 infected. This result was achieved in 2.5 seconds. Results on a larger population can be achieved in a reasonnable amount of time but it requires a certain amount of RAM and you might need to subsamble the data fed to matplotlib.
+
 # References
 Exact stochastic simulation of coupled chemical reactions : https://pubs.acs.org/doi/abs/10.1021/j100540a008
 
