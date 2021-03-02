@@ -10,7 +10,7 @@ To adapt this code to your situation, the following must be changed: data, stoic
 
 # Result
 <div align="center">
-    <img src="./SIR48020.png" width="300">
+    <img src="./SIR48020.png" width="600">
 </div>
 
 Here is the result of 100 simulations on a population of 480 susceptible people and 20 infected. This result was achieved in 2.5 seconds. Results on a larger population can be achieved in a reasonnable amount of time but it requires a certain amount of RAM and you might need to subsamble the data fed to matplotlib.
