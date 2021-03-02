@@ -8,7 +8,7 @@ Within gillespie.py, gillespie_direct() is the actual implementation of Gillespi
 
 To adapt this code to your situation, the following must be changed: data, stoichiometry and propensity()
 
-# Result
+# Results
 <div align="center">
     <img src="./SIR48020.png" width="600">
 </div>
