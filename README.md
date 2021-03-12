@@ -1,5 +1,5 @@
 # Gillespie
-Numba accelerated implementation of Gillespie's algorithm for simulating stochastic processes. This implementation is based on the following [project](https://github.com/wefatherley/monte-carlo).
+Numba accelerated implementation of Gillespie's algorithm for simulating stochastic processes. This implementation was inspired by the following [project](https://github.com/wefatherley/monte-carlo).
 
 This implementation can be up to 10 times faster but it is less user-friendly.
 
