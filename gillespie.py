@@ -34,7 +34,7 @@ def gillespie_direct(data, stoichiometry, iter, timestop=0):
     propensity(i, d): user defined function which returns a numpy array with the propensities of length m
 
     Output:
-    res: slice of the data array with the actual number of iterations done (algorithm can stops sooner than iter if no more possible transition),
+    res: slice of the data array with the actual number of iterations done (algorithm can stop sooner than iter if no more possible transition),
     warning: res refers to the same memory as data
 
 
@@ -60,6 +60,27 @@ def gillespie_direct(data, stoichiometry, iter, timestop=0):
                 break
     return data
 
+
+"""
+iter: max number of iteration the algorithm will execute
+data: preallocated array upon which gillespie will work. Each row (except the last) stores the population of each category at a given time, the last row is used to store the time.
+The first column must be initialized with the initial conditions.
+Here S= 5480, I= 20, E= 0 and time = 0
+"""
+iter=20000
+data= np.zeros((4,iter), dtype=float)
+data[:, 0]=[5480.0,20.0,0.0,0.0] #intialiase data ->  s i r time
+
+
+"""
+Array used to know how many units are transferred from one category to another for each reaction/transition
+"""
+stoichiometry = np.array([# s  i  r   <- same column order than initial conditions and same line order as propensities
+    [ -1,  1,  0], # First row: S->I thus -1 for S, +1 for I and R not affected
+    [0,  -1,  1],# Second row: I-> R thus -1 for I, +1 for R and S not affected
+])
+
+
 @jit(nopython=True, cache= True)
 def propensity(i, d):
     """
@@ -84,24 +105,6 @@ def propensity(i, d):
                      beta * d[1][i]]) # I -> R at transition rate: beta * I
 
 
-"""
-iter: max number of iteration the algorithm will execute
-data: preallocated array upon which gillespie will work. Each row (except the last) stores the population of each category at a given time, the last row is used to store the time.
-The first column must be initialized with the initial conditions.
-Here S= 5480, I= 20, E= 0 and time = 0
-"""
-iter=20000
-data= np.zeros((4,iter), dtype=float)
-data[:, 0]=[5480.0,20.0,0.0,0.0] #intialiase data ->  s i r time
-
-
-"""
-Array used to know how many units are transferred from one category to another for each reaction/transition
-"""
-stoichiometry = np.array([# s  i  r   <- same column order than initial conditions and same line order as propensities
-    [ -1,  1,  0], # First row: S->I thus -1 for S, +1 for I and R not affected
-    [0,  -1,  1],# Second row: I-> R thus -1 for I, +1 for R and S not affected
-])
 
 pyplot.figure(figsize=(10,10))
 # make a subplot for the susceptible, infected and recovered individuals
