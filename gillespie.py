@@ -16,8 +16,8 @@ With S: susceptible population, I: infected population, R: recovered population 
 Propensity/ Transition rate from S to I : alpha * PopulationOfS * PopulationOfI / TotalPopulation
 Propensity/ Transition rate from I to R : beta  * PopulationOfI 
 
-Stoichiometry of first reaction: -1 to PopulationOfS and +1 to PopulationOfI
-Stoichiometry of first reaction: -1 to PopulationOfI and +1 to PopulationOfR
+Stoichiometry of the first reaction: -1 to PopulationOfS and +1 to PopulationOfI
+Stoichiometry of the second reaction: -1 to PopulationOfI and +1 to PopulationOfR
 
 """
 
